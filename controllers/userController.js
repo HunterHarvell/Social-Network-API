@@ -32,7 +32,7 @@ const userController = {
         .select('-__v')
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'User not found'});
                 return; 
             }
             res.json(dbUserData)
@@ -48,7 +48,7 @@ const userController = {
         Users.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'User not found'});
                 return;
             }
             res.json(dbUserData);
@@ -61,7 +61,7 @@ const userController = {
         Users.findOneAndDelete({_id: params.id})
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'User not found'});
                 return;
             }
             res.json(dbUserData);
@@ -76,7 +76,7 @@ const userController = {
         .select('-__v')
         .then(dbUserData => {
             if (!dbUserData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'User not found'});
                 return;
             }
         res.json(dbUserData);
@@ -91,7 +91,7 @@ const userController = {
         .select('-__v')
         .then(dbUserData => {
             if(!dbUserData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'User not found'});
                 return;
             }
             res.json(dbUserData);

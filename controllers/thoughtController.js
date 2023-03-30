@@ -10,7 +10,7 @@ const thoughtController = {
         })
         .then(dbThoughtData => {
             if(!dbThoughtData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'Thought not created'});
                 return;
             }
             res.json(dbThoughtData)
@@ -37,7 +37,7 @@ const thoughtController = {
         .select('-__v')
         .then(dbThoughtData => {
             if(!dbThoughtData) {
-            res.status(404).json({message: 'Cant find a thought with that ID.'});
+            res.status(404).json({message: 'Thought not found'});
             return;
         }
         res.json(dbThoughtData)
@@ -55,7 +55,7 @@ const thoughtController = {
         .select('-___v')
         .then(dbThoughtData => {
             if (!dbThoughtData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'Thought not found'});
                 return;
             }
                 res.json(dbThoughtData);
@@ -68,7 +68,7 @@ const thoughtController = {
         Thoughts.findOneAndDelete({_id: params.id})
         .then(dbThoughtData => {
             if (!dbThoughtData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'Thought not found'});
                 return;
             }
             res.json(dbThoughtData);
@@ -83,7 +83,7 @@ const thoughtController = {
         .select('-__v')
         .then(dbThoughtData => {
         if (!dbThoughtData) {
-            res.status(404).json({message: 'Cant find a thought with that ID.'});
+            res.status(404).json({message: 'Thought not found'});
             return;
         }
         res.json(dbThoughtData);
@@ -97,7 +97,7 @@ const thoughtController = {
         Thoughts.findOneAndUpdate({_id: params.thoughtId}, {$pull: {reactions: {reactionId: params.reactionId}}}, {new : true})
         .then(dbThoughtData => {
             if (!dbThoughtData) {
-                res.status(404).json({message: 'Cant find a thought with that ID.'});
+                res.status(404).json({message: 'Thought not found'});
                 return;
             }
             res.json(dbThoughtData);
