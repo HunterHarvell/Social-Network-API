@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
 // hook to routes
-const usersRoutes = require('./userRoutes');
+const userRoutes = require('./userRoutes');
 const thoughtsRoutes = require('./thoughtRoutes');
 
-router.use('/users', usersRoutes);
+router.use('/users', userRoutes);
 
 router.use('/thoughts', thoughtsRoutes);
 

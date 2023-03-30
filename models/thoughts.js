@@ -18,7 +18,7 @@ const ThoughtsSchema = new Schema(
         type: String,
         required: true
     },
-    reactions: [ReactionsSchema]
+    reactions: [reactionSchema]
     },
     {
     toJSON: {
@@ -29,7 +29,7 @@ const ThoughtsSchema = new Schema(
     }
 )
 
-const ReactionsSchema = new Schema(
+const reactionSchema = new Schema(
     {
     reactionId: {
         type: Schema.Types.ObjectId,
@@ -65,5 +65,5 @@ ThoughtsSchema.virtual('reactionCount').get(function() {
 // creates Thoughts model
 const Thoughts = model('Thoughts', ThoughtsSchema);
 
-// exports Thoughts module
+// exports Thoughts
 module.exports = Thoughts;
