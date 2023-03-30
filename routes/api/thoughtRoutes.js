@@ -2,10 +2,10 @@ const router = require('express').Router();
 
 const { 
     getAllThoughts, 
-    getThoughtsById, 
-    createThoughts, 
-    updateThoughts,
-    deleteThoughts,
+    getThoughtById, 
+    createThought, 
+    updateThought,
+    deleteThought,
     addReaction,
     deleteReaction
 
@@ -15,10 +15,10 @@ const {
 router.route('/').get(getAllThoughts);
 
 //directs to: /api/thoughts/:id <GET, PUT, DELETE>
-router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts); 
+router.route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought); 
 
 //directs to: /api/thoughts/:userId <POST>
-router.route('/:userId').post(createThoughts);
+router.route('/:userId').post(createThought);
 
 //directs to: /api/thoughts/:thoughtId/reactions <POST>
 router.route('/:thoughtId/reactions').post(addReaction);
